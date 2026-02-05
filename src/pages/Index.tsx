@@ -44,15 +44,9 @@ const testimonials = [
 const Index = () => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (url: string) => {
-    setIsLoading(true);
-    toast.success("Analyzing your website...");
-    
-    // Simulate processing
-    setTimeout(() => {
-      setIsLoading(false);
-      toast.success("Video generated successfully!");
-    }, 2000);
+  const handleSubmit = (url: string) => {
+    const encodedUrl = encodeURIComponent(url);
+    window.location.href = `https://app.a9ai.ai?url=${encodedUrl}`;
   };
 
   return (

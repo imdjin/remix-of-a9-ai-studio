@@ -26,7 +26,7 @@ export const ChatInput = ({ onSubmit, isLoading }: ChatInputProps) => {
           type="url"
           value={url}
           onChange={(e) => setUrl(e.target.value)}
-          placeholder="输入你的官网链接，快速生成产品演示视频..."
+          placeholder="Enter your website URL to generate a product demo video..."
           className="flex-1 h-14 px-6 text-base bg-secondary border-border focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
           disabled={isLoading}
         />

@@ -21,8 +21,8 @@
    yearlyPrice,
    features,
    popular = false,
-   buttonText = "开始使用",
- }: PricingCardProps) => {
+  buttonText = "Get Started",
+}: PricingCardProps) => {
    return (
      <div
        className={`relative p-6 bg-card border rounded-2xl transition-all duration-300 ${
@@ -31,16 +31,16 @@
            : "border-border shadow-soft hover:shadow-glow"
        }`}
      >
-       {popular && (
-         <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-primary text-primary-foreground text-sm font-medium rounded-full">
-           最受欢迎
+        {popular && (
+          <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-gradient-primary text-primary-foreground text-sm font-medium rounded-full">
+            Most Popular
          </div>
        )}
        <div className="text-center mb-6">
          <h3 className="text-xl font-bold text-foreground mb-2">{name}</h3>
          <div className="flex items-baseline justify-center gap-1">
            <span className="text-4xl font-bold text-foreground">
-             {monthlyPrice === 0 ? "免费" : `$${monthlyPrice}`}
+             {monthlyPrice === 0 ? "Free" : `$${monthlyPrice}`}
            </span>
            {monthlyPrice !== 0 && (
              <span className="text-muted-foreground">/月</span>

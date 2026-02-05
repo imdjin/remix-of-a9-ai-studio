@@ -2,6 +2,14 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Send } from "lucide-react";
+import { toast } from "sonner";
+import { z } from "zod";
+
+const urlSchema = z
+  .string()
+  .trim()
+  .min(1, { message: "Please enter a URL." })
+  .url({ message: "Please enter a valid URL (include https://)." });
 
 interface ChatInputProps {
   onSubmit: (url: string) => void;
@@ -13,17 +21,22 @@ export const ChatInput = ({ onSubmit, isLoading }: ChatInputProps) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (url.trim()) {
-      onSubmit(url.trim());
-      setUrl("");
+    const parsed = urlSchema.safeParse(url);
+    if (!parsed.success) {
+      toast.error(parsed.error.issues[0]?.message ?? "Please enter a valid URL.");
+      return;
     }
+
+    onSubmit(parsed.data);
+    setUrl("");
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full max-w-4xl mx-auto">
+    <form noValidate onSubmit={handleSubmit} className="w-full max-w-4xl mx-auto">
       <div className="relative flex items-center gap-2">
         <Input
-          type="url"
+          type="text"
+          inputMode="url"
           value={url}
           onChange={(e) => setUrl(e.target.value)}
           placeholder="Enter your website URL to generate a product demo video..."

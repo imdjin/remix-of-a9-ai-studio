@@ -5,6 +5,7 @@ import avatarRyan from "@/assets/avatar-ryan.jpg";
 import avatarEmily from "@/assets/avatar-emily.jpg";
 import painPointIllustration from "@/assets/pain-point-illustration.png";
 import visionIllustration from "@/assets/vision-illustration.png";
+import a9Logo from "@/assets/a9-logo.svg";
 import { ChatInput } from "@/components/ChatInput";
 import { FeatureCard } from "@/components/FeatureCard";
 import { UseCaseCard } from "@/components/UseCaseCard";
@@ -55,9 +56,7 @@ const Index = () => {
       <header className="border-b border-border/50 backdrop-blur-sm bg-background/80 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">A9</span>
-            </div>
+            <img src={a9Logo} alt="A9 Logo" className="w-10 h-10" />
             <span className="text-xl font-bold text-foreground">A9</span>
           </div>
           <nav className="hidden md:flex items-center gap-8">
@@ -307,9 +306,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">A9</span>
-              </div>
+              <img src={a9Logo} alt="A9 Logo" className="w-8 h-8" />
               <span className="font-bold text-foreground">A9</span>
             </div>
             

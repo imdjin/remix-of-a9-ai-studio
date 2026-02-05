@@ -1,53 +1,53 @@
  import { Check, Minus } from "lucide-react";
  
- const plans = ["免费版", "专业版", "旗舰版"];
- 
- const features = [
-   {
-     name: "海外月付价格（美元）",
-     values: ["0", "19", "59"],
-   },
-   {
-     name: "海外年付价格（美元）",
-     values: ["0", "199", "499"],
-   },
-   {
-     name: "AI点数",
-     values: ["100点/月", "1000点/月", "5000点/月"],
-   },
-   {
-     name: "AI生成视频数量",
-     values: ["3个", "不限", "不限"],
-   },
-   {
-     name: "去水印导出",
-     values: [false, true, true],
-   },
-   {
-     name: "导出清晰度",
-     values: ["720p", "1080p", "1080p / 2K（可选）"],
-   },
-   {
-     name: "策划方案",
-     values: ["1套", "3套", "3套"],
-   },
-   {
-     name: "高转化模板库",
-     values: [false, false, true],
-   },
-   {
-     name: "品牌资产包",
-     values: [false, "3套", "不限"],
-   },
-   {
-     name: "营销平台适配物料导出",
-     values: [false, false, true],
-   },
-   {
-     name: "客服服务",
-     values: [false, "24小时反馈", "极速反馈"],
-   },
- ];
+const plans = ["Free", "Pro", "Enterprise"];
+
+const features = [
+  {
+    name: "Monthly Price (USD)",
+    values: ["$0", "$19", "$59"],
+  },
+  {
+    name: "Annual Price (USD)",
+    values: ["$0", "$199", "$499"],
+  },
+  {
+    name: "AI Credits",
+    values: ["100/month", "1,000/month", "5,000/month"],
+  },
+  {
+    name: "AI-Generated Videos",
+    values: ["3 videos", "Unlimited", "Unlimited"],
+  },
+  {
+    name: "Watermark-Free Export",
+    values: [false, true, true],
+  },
+  {
+    name: "Export Resolution",
+    values: ["720p", "1080p", "1080p / 2K (optional)"],
+  },
+  {
+    name: "Marketing Plans",
+    values: ["1 plan", "3 plans", "3 plans"],
+  },
+  {
+    name: "High-Converting Templates",
+    values: [false, false, true],
+  },
+  {
+    name: "Brand Asset Packs",
+    values: [false, "3 packs", "Unlimited"],
+  },
+  {
+    name: "Platform-Specific Assets",
+    values: [false, false, true],
+  },
+  {
+    name: "Support",
+    values: [false, "24h Response", "Priority Support"],
+  },
+];
  
  const renderValue = (value: string | boolean) => {
    if (value === true) {
